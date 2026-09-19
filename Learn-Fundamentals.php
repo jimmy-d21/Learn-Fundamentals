@@ -111,4 +111,45 @@ echo "Float Type: " . gettype($floatVal) . "\n";
 
 echo "Is intVal an integer? " . (is_int($intVal) ? "Yes" : "No") . "\n";
 // RESULT: Is intVal an integer? Yes
+
+// =============================================================================
+// TOPIC 4: CASTING DATA TYPES
+// =============================================================================
+/*
+  - What it is: Explicit conversion from one data type to another.
+  - Syntax: (int), (float), (string), (bool), (array), (object)
+  - Why it is important: Sanitizes and prepares string inputs for calculations/DB operations.
+  - Difficulty: Intermediate
+*/
+
+echo "\n==========================================\n";
+echo "4. CASTING DATA TYPES DEMO\n";
+echo "==========================================\n";
+
+$rawInput = "15.75 items";
+
+$castedInt   = (int) $rawInput;   // Truncates non-numeric suffix
+// RESULT: 15
+
+$castedFloat = (float) $rawInput; // Preserves floating point value
+// RESULT: 15.75
+
+$castedBool  = (bool) "";         // Empty string evaluates to false
+// RESULT: false
+
+$userAssocArray = ["username" => "dev_john", "role" => "Admin"];
+$userObject     = (object) $userAssocArray; // Converts array to stdClass object
+
+echo "Raw String: '$rawInput'\n";
+// RESULT: Raw String: '15.75 items'
+
+echo "Casted (int): $castedInt\n";
+// RESULT: Casted (int): 15
+
+echo "Casted (float): $castedFloat\n";
+// RESULT: Casted (float): 15.75
+
+echo "Accessing Property from Casted Object: " . $userObject->username . "\n";
+// RESULT: Accessing Property from Casted Object: dev_john
+
 ?>
