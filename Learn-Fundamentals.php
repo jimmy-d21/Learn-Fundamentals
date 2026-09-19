@@ -79,4 +79,36 @@ testVariableScope();
 echo 'Literal output test: $globalUser will not evaluate here.' . "\n";
 // RESULT: Literal output test: $globalUser will not evaluate here.
 
+
+// =============================================================================
+// TOPIC 3: DATA TYPES
+// =============================================================================
+/*
+  - What it is: Data classification (String, Int, Float, Bool, Array, Object, Null, Resource).
+  - Why it is important: Determines allowed mathematical and logical operations.
+  - Difficulty: Beginner
+*/
+
+echo "\n==========================================\n";
+echo "3. DATA TYPES DEMO\n";
+echo "==========================================\n";
+
+$strVal   = "PHP Programming"; // String
+$intVal   = 42;                // Integer
+$floatVal = 99.99;             // Float / Double
+$boolVal  = true;              // Boolean
+$arrayVal = ["PHP", "MySQL"];  // Array
+$nullVal  = null;              // NULL
+
+echo "String Type: " . gettype($strVal) . "\n";
+// RESULT: String Type: string
+
+echo "Integer Type: " . gettype($intVal) . "\n";
+// RESULT: Integer Type: integer
+
+echo "Float Type: " . gettype($floatVal) . "\n";
+// RESULT: Float Type: double
+
+echo "Is intVal an integer? " . (is_int($intVal) ? "Yes" : "No") . "\n";
+// RESULT: Is intVal an integer? Yes
 ?>
