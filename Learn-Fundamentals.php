@@ -211,4 +211,43 @@ print_r($userAssocArray);
   )
 */
 
+// =============================================================================
+// TOPIC 6: CONSTANTS
+// =============================================================================
+/*
+  - What it is: Identifiers for simple values that CANNOT change during script execution.
+  - Syntax:
+    * define("NAME", value): Global scope, defined at runtime.
+    * const NAME = value: Defined at compile-time, usable in global/class/namespace scopes.
+  - Why it is important: Holds fixed config values (DB settings, API keys, version numbers).
+  - Difficulty: Beginner
+*/
+
+echo "\n==========================================\n";
+echo "6. CONSTANTS DEMO\n";
+echo "==========================================\n";
+
+// Define runtime global constant
+define("SITE_URL", "https://example.com");
+
+// Define compile-time constant
+const APP_VERSION = "2.1.0";
+
+echo "Site URL: " . SITE_URL . "\n";
+// RESULT: Site URL: https://example.com
+
+echo "App Version: " . APP_VERSION . "\n";
+// RESULT: App Version: 2.1.0
+
+// Magic Constants (Built-in predefined constants)
+echo "Current Line Number: " . __LINE__ . "\n";
+// RESULT: Current Line Number: 185 (Outputs current file line integer)
+
+echo "Current File Path: " . __FILE__ . "\n";
+// RESULT: Current File Path: /path/to/php-core-fundamentals/learn_fundamentals.php
+
+echo "\n==========================================\n";
+echo "ALL FUNDAMENTALS EXECUTED SUCCESSFULLY!\n";
+echo "==========================================\n";
+
 ?>
