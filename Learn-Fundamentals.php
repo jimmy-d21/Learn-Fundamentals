@@ -43,4 +43,40 @@ $appName = "PHP Fundamentals App";
 echo "App Name: " . $appName . "\n"; 
 // RESULT: App Name: PHP Fundamentals App
 
+// =============================================================================
+// TOPIC 2: VARIABLES AND SCOPE
+// =============================================================================
+/*
+  - What it is: Storage containers ($) and their visibility (Local, Global, Static).
+  - Why it is important: Prevents variable naming collisions and retains state cleanly.
+  - Difficulty: Beginner to Intermediate
+*/
+
+echo "\n==========================================\n";
+echo "2. VARIABLES AND SCOPE DEMO\n";
+echo "==========================================\n";
+
+$globalUser = "Alex"; // Global Scope variable
+
+function testVariableScope() {
+    global $globalUser;      // Imports global variable into local function scope
+    static $visitCounter = 0; // Static variable retains value across calls
+    $visitCounter++;
+    
+    $localStatus = "Active";  // Local Scope variable
+    
+    // Double quotes evaluate (interpolate) variables
+    echo "User: $globalUser | Status: $localStatus | Visit #$visitCounter\n";
+}
+
+testVariableScope(); 
+// RESULT: User: Alex | Status: Active | Visit #1
+
+testVariableScope(); 
+// RESULT: User: Alex | Status: Active | Visit #2
+
+// Single quotes output text literally without evaluating variables
+echo 'Literal output test: $globalUser will not evaluate here.' . "\n";
+// RESULT: Literal output test: $globalUser will not evaluate here.
+
 ?>
