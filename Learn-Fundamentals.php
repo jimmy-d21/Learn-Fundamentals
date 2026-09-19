@@ -152,4 +152,63 @@ echo "Casted (float): $castedFloat\n";
 echo "Accessing Property from Casted Object: " . $userObject->username . "\n";
 // RESULT: Accessing Property from Casted Object: dev_john
 
+// =============================================================================
+// TOPIC 5: OUTPUT AND DEBUGGING
+// =============================================================================
+/*
+  - What it is: Language constructs & functions to display content and inspect variables:
+    * echo: Language construct, fast, accepts multiple parameters, no return value.
+    * print: Language construct, returns 1 (can be used in expressions).
+    * var_dump(): Output detailed type, length, and value information (Primary Debug Tool).
+    * print_r(): Output human-readable information for arrays and objects.
+  - Why it is important: Critical for application development, debugging, and troubleshooting.
+  - Difficulty: Beginner
+*/
+
+echo "\n==========================================\n";
+echo "5. OUTPUT AND DEBUGGING DEMO\n";
+echo "==========================================\n";
+
+// 1. echo (Outputs multiple string arguments separated by commas)
+echo "echo: ", "Learning ", "PHP ", "Output\n";
+// RESULT: echo: Learning PHP Output
+
+// 2. print (Always returns 1, can be used in expressions)
+$result = print("print: Outputting single string\n");
+// RESULT: print: Outputting single string
+
+echo "print return value: $result\n\n";
+// RESULT: print return value: 1
+
+// 3. var_dump() — Highly detailed structure inspection
+echo "--- var_dump() Output ---\n";
+var_dump($arrayVal);
+/*
+  RESULT:
+  array(2) {
+    [0]=>
+    string(3) "PHP"
+    [1]=>
+    string(5) "MySQL"
+  }
+*/
+
+var_dump($boolVal);
+/*
+  RESULT:
+  bool(true)
+*/
+
+// 4. print_r() — Human-readable array structure inspection
+echo "\n--- print_r() Output ---\n";
+print_r($userAssocArray);
+/*
+  RESULT:
+  Array
+  (
+      [username] => dev_john
+      [role] => Admin
+  )
+*/
+
 ?>
